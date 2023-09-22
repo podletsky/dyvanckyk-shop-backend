@@ -4,6 +4,12 @@ const ctrl = require("../../controllers/auth");
 
 const { validateBody, authenticate, upload } = require("../../middlewares");
 const { schemas } = require("../../models/user");
+router.get("/verify/:verificationToken", ctrl.verifyEmail);
+router.get(
+  "/verify",
+  validateBody(schemas.emailSchema),
+  ctrl.resendVerifyEmail
+);
 
 router.post("/register", validateBody(schemas.registerSchema), ctrl.register);
 
