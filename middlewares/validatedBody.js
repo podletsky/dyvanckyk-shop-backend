@@ -10,5 +10,5 @@ const validateBody = (schema) => {
   };
   return func;
 };
-
+console.log("sddsads");
 module.exports = validateBody;
